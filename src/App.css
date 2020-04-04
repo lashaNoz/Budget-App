@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Muli:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Muli:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
 
 * {
   margin: 0;
@@ -20,14 +20,14 @@ html {
 
 .app-wrapper {
   width: 90%;
-  max-width: 140rem;
+  max-width: 150rem;
   height: 80vh;
   background-color: #2c2c2d;
   color: #eee;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.7);
   display: grid;
-  grid-template-columns: minmax(40%, 40rem) repeat(2, minmax(30%, 30rem));
+  grid-template-columns: minmax(38%, 40rem) repeat(2, minmax(29%, 29rem));
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 1rem;
 }
@@ -210,7 +210,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .transaction-list {
-  width: 90%;
+  width: 92%;
   max-height: 35rem;
   overflow: hidden;
   overflow-y: auto;
@@ -242,7 +242,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #fff;
   padding: 0.4rem 0.4rem 0.4rem 0.7rem;
   border-radius: 0.3rem;
-  width: 31rem;
+  width: 32rem;
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -295,6 +295,10 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-top: 7rem;
   }
 
+  .transaction-list {
+    max-height: 31rem;
+  }
+
   .transaction {
     width: 30rem;
   }
@@ -307,6 +311,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .app-wrapper {
     grid-gap: 0;
+  }
+
+  .transaction-list {
+    max-height: 29rem;
   }
 
   .transaction {
