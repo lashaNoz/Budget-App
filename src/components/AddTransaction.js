@@ -7,55 +7,60 @@ const AddTransaction = () => {
 
   const [income, setIncome] = useState({
     incomeText: "",
-    incomeAmount: 0
+    incomeAmount: 0,
   });
 
   const { incomeText, incomeAmount } = income;
 
-  const onChangeIncome = e =>
+  const onChangeIncome = (e) => {
     setIncome({ ...income, [e.target.name]: e.target.value });
+  };
 
-  const [expense, setExpense] = useState({
-    expenseText: "",
-    expenseAmount: 0
-  });
-
-  const { expenseText, expenseAmount } = expense;
-
-  const onChangeExpense = e =>
-    setExpense({ ...expense, [e.target.name]: e.target.value });
-
-  const onSubmitIncome = e => {
+  const onSubmitIncome = (e) => {
     e.preventDefault();
-    if (incomeText !== "" && incomeAmount !== 0) {
+
+    if (incomeText !== "") {
       const newIncomeTransaction = {
         id: uuidv4(),
         incomeText,
-        incomeAmount: incomeAmount * 1
+        incomeAmount: incomeAmount * 1,
       };
 
       addIncome(newIncomeTransaction);
+
       setIncome({
         incomeText: "",
-        incomeAmount: 0
+        incomeAmount: 0,
       });
     }
   };
 
-  const onSubmitExpense = e => {
+  const [expense, setExpense] = useState({
+    expenseText: "",
+    expenseAmount: 0,
+  });
+
+  const { expenseText, expenseAmount } = expense;
+
+  const onChangeExpense = (e) => {
+    setExpense({ ...expense, [e.target.name]: e.target.value });
+  };
+
+  const onSubmitExpense = (e) => {
     e.preventDefault();
 
-    if (expenseText !== "" && expenseAmount !== 0) {
+    if (expenseText !== "") {
       const newExpenseTransaction = {
         id: uuidv4(),
         expenseText,
-        expenseAmount: expenseAmount * 1
+        expenseAmount: expenseAmount * 1,
       };
 
       addExpense(newExpenseTransaction);
+
       setExpense({
         expenseText: "",
-        expenseAmount: 0
+        expenseAmount: 0,
       });
     }
   };
@@ -65,20 +70,20 @@ const AddTransaction = () => {
       <form onSubmit={onSubmitIncome}>
         <div className="input-group income">
           <input
-            name="incomeText"
             type="text"
+            name="incomeText"
             value={incomeText}
-            onChange={onChangeIncome}
             placeholder="Add Income..."
-            autocomplete="off"
+            autoComplete="off"
+            onChange={onChangeIncome}
           />
           <input
-            name="incomeAmount"
             type="number"
+            name="incomeAmount"
             value={incomeAmount}
-            onChange={onChangeIncome}
             placeholder="Amount"
-            autocomplete="off"
+            autoComplete="off"
+            onChange={onChangeIncome}
           />
           <input type="submit" value="Submit" />
         </div>
@@ -86,20 +91,20 @@ const AddTransaction = () => {
       <form onSubmit={onSubmitExpense}>
         <div className="input-group expense">
           <input
-            name="expenseText"
             type="text"
+            name="expenseText"
             value={expenseText}
-            onChange={onChangeExpense}
             placeholder="Add Expense..."
-            autocomplete="off"
+            autoComplete="off"
+            onChange={onChangeExpense}
           />
           <input
-            name="expenseAmount"
             type="number"
+            name="expenseAmount"
             value={expenseAmount}
+            placeholder="Amount"
+            autoComplete="off"
             onChange={onChangeExpense}
-            placeholder="Amount..."
-            autocomplete="off"
           />
           <input type="submit" value="Submit" />
         </div>
